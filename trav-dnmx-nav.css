@@ -1,0 +1,122 @@
+/* Traversion Dynamics: floating navbar. Loaded after trav-dnmx-style.css. */
+
+.site-nav {
+  position: fixed;
+  top: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9998;
+  width: min(960px, calc(100% - 28px));
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 0 8px 0 18px;
+  background: rgba(13, 14, 21, 0.74);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(217, 224, 228, 0.18);
+  color: var(--titanium);
+  box-shadow: 0 10px 40px rgba(13, 14, 21, 0.18);
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-title, sans-serif);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.nav-brand img { width: 22px; height: 23px; }
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.nav-links a {
+  display: block;
+  padding: 10px 14px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(244, 245, 246, 0.7);
+  transition: color 0.4s var(--ease-silk), background 0.4s var(--ease-silk);
+}
+
+.nav-links a:hover { color: var(--titanium); }
+.nav-links a.is-active { color: var(--accent); }
+
+.nav-links .nav-cta {
+  margin-left: 10px;
+  padding: 13px 18px;
+  background: var(--accent);
+  color: var(--carbon);
+  font-weight: 700;
+}
+
+.nav-links .nav-cta:hover { background: var(--titanium); color: var(--carbon); }
+
+.site-nav a:focus-visible,
+.nav-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.nav-toggle {
+  display: none;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(217, 224, 228, 0.25);
+  color: var(--titanium);
+}
+
+.nav-toggle span,
+.nav-toggle span::before {
+  display: block;
+  width: 16px;
+  height: 1.5px;
+  background: currentColor;
+  position: relative;
+  transition: transform 0.4s var(--ease-silk), background 0.3s;
+}
+
+.nav-toggle span::before { content: ""; position: absolute; top: 5px; left: 0; }
+
+.site-nav.open .nav-toggle span { transform: translateY(2.5px) rotate(45deg); }
+.site-nav.open .nav-toggle span::before { transform: translateY(-5px) rotate(-90deg); top: 5px; }
+
+/* keep the card 3 heading clear of the floating nav */
+.fold-head { padding-top: 88px; }
+
+@media (max-width: 760px) {
+  .nav-toggle { display: flex; }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 8px;
+    background: rgba(13, 14, 21, 0.94);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(217, 224, 228, 0.18);
+  }
+
+  .site-nav.open .nav-links { display: flex; }
+  .nav-links a { padding: 14px 12px; }
+  .nav-links .nav-cta { margin: 8px 0 0; text-align: center; }
+}

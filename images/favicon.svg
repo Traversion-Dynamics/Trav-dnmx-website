@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1008" width="1000" height="1008" role="img" aria-label="Logo">
+  <title>Logo</title>
+  <defs><clipPath id="tile"><rect width="1000" height="1008" rx="66"/></clipPath></defs>
+  <rect width="1000" height="1008" rx="66" fill="#111111"/>
+  <g clip-path="url(#tile)" fill="#FFFFFF">
+    <path d="M212 643 L583 420 V654 L409 756 Z"/>
+    <path d="M602 411 L1001 181 V416 L654 615 C725 622 805 655 805 720 V1008 H602 Z"/>
+  </g>
+</svg>
