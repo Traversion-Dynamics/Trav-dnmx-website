@@ -13,7 +13,7 @@
 
   var CONFIG = {
     endpoint: "",   // e.g. "https://formspree.io/f/xxxxxxxx"
-    email: "",      // e.g. "contact@your-domain.com"
+    email: "shimron.alakkal1804@gmail.com",
     subjectPrefix: "Traversion Dynamics enquiry"
   };
 
@@ -148,7 +148,7 @@
     } else if (CONFIG.email) {
       sendMailto(data);
     } else {
-      showStatus("error", "The form is ready, but no destination is set up yet. Set an endpoint or email in contact.js to start receiving messages.");
+      showStatus("error", "Try again, please.");
     }
   });
 })();
